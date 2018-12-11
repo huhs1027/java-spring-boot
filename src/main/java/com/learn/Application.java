@@ -4,6 +4,7 @@ import com.learn.registrar.ErrorPageRegistrarImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.server.ErrorPageRegistrar;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -11,7 +12,10 @@ import org.springframework.context.annotation.Bean;
  *
  * @author huhongsen
  */
+//springboot核心注解.
 @SpringBootApplication
+//启用servlet注解.
+@ServletComponentScan
 public class Application {
 
     public static void main(String[] args) {
