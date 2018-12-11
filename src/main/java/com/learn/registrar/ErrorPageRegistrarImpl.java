@@ -4,7 +4,6 @@ import org.springframework.boot.web.server.ErrorPage;
 import org.springframework.boot.web.server.ErrorPageRegistrar;
 import org.springframework.boot.web.server.ErrorPageRegistry;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 
 /**
  * 注册默认响应码映射页面
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Component;
  * @author huhongsen
  * @date 2018/12/10
  */
-@Component
 public class ErrorPageRegistrarImpl implements ErrorPageRegistrar {
     @Override
     public void registerErrorPages(ErrorPageRegistry errorPageRegistry) {
