@@ -6,7 +6,10 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 /**
- * Created by huhongsen on 2018/12/12.
+ * 注解的方式
+ *
+ * @author huhongsen
+ * @date 2018/12/12
  */
 public interface UserDao {
 
