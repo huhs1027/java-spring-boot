@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 /**
  * web容器监听器
@@ -14,7 +13,6 @@ import javax.servlet.annotation.WebListener;
  * @author huhongsen
  * @date 2018/12/11
  */
-@WebListener
 public class WebContextListener implements ServletContextListener {
 
     private Logger logger = LoggerFactory.getLogger(WebContextListener.class);
@@ -28,6 +26,6 @@ public class WebContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-
+        logger.info("容器停止.....");
     }
 }
