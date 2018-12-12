@@ -3,6 +3,7 @@ package com.learn;
 import com.learn.filter.RequestFilter;
 import com.learn.interceptor.MyInterceptor;
 import com.learn.listener.WebContextListener;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.server.ErrorPage;
@@ -23,8 +24,8 @@ import javax.servlet.ServletContextListener;
  *
  * @author huhongsen
  */
-//springboot核心注解.
 @SpringBootApplication
+@MapperScan("com.learn.dao.api")
 public class Application implements WebMvcConfigurer {
 
     public static void main(String[] args) {
