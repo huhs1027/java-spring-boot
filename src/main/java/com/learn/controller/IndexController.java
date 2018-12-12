@@ -18,13 +18,4 @@ public class IndexController {
         return "index.html";
     }
 
-    @RequestMapping("/404")
-    public String error404() {
-        return "/error/404.html";
-    }
-
-    @RequestMapping("/405")
-    public String error405() {
-        return "/error/405.html";
-    }
 }

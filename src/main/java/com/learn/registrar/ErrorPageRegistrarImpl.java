@@ -12,10 +12,11 @@ import org.springframework.http.HttpStatus;
  * @date 2018/12/10
  */
 public class ErrorPageRegistrarImpl implements ErrorPageRegistrar {
+
     @Override
     public void registerErrorPages(ErrorPageRegistry errorPageRegistry) {
-        ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404");
-        ErrorPage error405Page = new ErrorPage(HttpStatus.METHOD_NOT_ALLOWED, "/405");
+        ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/error/code/404");
+        ErrorPage error405Page = new ErrorPage(HttpStatus.METHOD_NOT_ALLOWED, "/error/code/405");
         errorPageRegistry.addErrorPages(error404Page, error405Page);
     }
 }
