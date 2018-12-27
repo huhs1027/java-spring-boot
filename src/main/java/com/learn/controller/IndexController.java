@@ -1,8 +1,11 @@
 package com.learn.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Controller注解支持页面跳转
@@ -14,13 +17,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @Value("${a}")
-    public String a;
-
     @RequestMapping("/")
     public String index() {
-        System.out.println(a);
         return "index.html";
+    }
+
+    @RequestMapping("/flash")
+    public void index(HttpServletResponse response) throws IOException, InterruptedException {
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        for (int i = 0; i < 100; i++) {
+            System.out.println("这是第" + i + "次循环!");
+            writer.println("这是第" + i + "次循环!");
+            writer.flush();
+            Thread.sleep(100);
+        }
     }
 
 }

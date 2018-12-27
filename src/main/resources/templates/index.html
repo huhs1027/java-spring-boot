@@ -5,6 +5,42 @@
     <title>Title</title>
 </head>
 <body>
-    这是主页
+这是主页
+<input type="button" id="btn" value="click" name="这是按钮"/>
+<div id="div1">
+    div1
+</div>
 </body>
+<script>
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        var html_ = "";
+        var ajaxHttpRequest = new XMLHttpRequest();
+        ajaxHttpRequest.onreadystatechange = function () {
+            if (ajaxHttpRequest.readyState == 3) {
+                var newString = ajaxHttpRequest.responseText;
+                newString = newString.substring(html_.length);
+                html_ = ajaxHttpRequest.responseText;
+                var div1 = document.getElementById('div1');
+                var div2 = document.createElement("p");
+                div2.appendChild(document.createTextNode(newString));
+                div1.appendChild(div2);
+            }
+            /*if(ajaxHttpRequest.readyState == 4){
+                var div1 = document.getElementById('div1');
+                var div2 = document.createElement("p");
+                div2.appendChild(document.createTextNode(newString));
+                div1.appendChild(div2);
+            }*/
+        };
+        ajaxHttpRequest.open("get", "./flash", true);
+        ajaxHttpRequest.send();
+
+        //window.location.href = "./flash";
+        //document.write("hhhhh")
+    };
+
+</script>
+
+
 </html>
